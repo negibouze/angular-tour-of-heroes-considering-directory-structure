@@ -1,0 +1,42 @@
+.selected
+  background-color: #CFD8DC !important
+  color: white
+.heroes
+  width: 15em
+  margin: 0 0 2em 0
+  padding: 0
+  list-style-type: none
+  & li
+    position: relative
+    left: 0
+    height: 1.6em
+    margin: .5em
+    padding: .3em 0
+    border-radius: 4px
+    background-color: #EEE
+    cursor: pointer
+    &:hover
+      left: .1em
+      background-color: #DDD
+      color: #607D8B
+    > a
+      display: block
+      position: relative
+      width: 250px
+      text-decoration: none
+      color: #888
+      &:hover
+        color:#607D8B
+  & .badge
+    display: inline-block
+    position: relative
+    top: -4px
+    left: -1px
+    height: 1.8em
+    line-height: 1em
+    margin-right: .8em
+    padding: 0.8em 0.7em 0 0.7em
+    border-radius: 4px 0 0 4px
+    background-color: #607D8B
+    color: white
+    font-size: small
