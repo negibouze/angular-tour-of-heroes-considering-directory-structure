@@ -8,9 +8,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DashboardComponent } from './shared/components/dashboard/dashboard.component';
-import { HeroDetailComponent } from '@app/shared/components/hero-detail/hero-detail.component';
-import { HeroesComponent } from '@app/shared/components/heroes/heroes.component';
+import { DashboardComponent } from '@app/modules/dashboard/pages/dashboard/dashboard.component';
+import { HeroDetailComponent } from '@app/modules/hero-detail/pages/hero-detail/hero-detail.component';
+import { HeroesComponent } from '@app/modules/heroes/pages/heroes/heroes.component';
 import { MessagesComponent } from '@app/shared/components/messages/messages.component';
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HeroSearchComponent } from './shared/components/hero-search/hero-search.component';
