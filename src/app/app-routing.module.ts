@@ -1,15 +1,52 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from '@app/modules/dashboard/pages/dashboard/dashboard.component';
-import { HeroesComponent } from '@app/modules/heroes/pages/heroes/heroes.component';
-import { HeroDetailComponent } from '@app/modules/hero-detail/pages/hero-detail/hero-detail.component';
+import { LoginLayoutComponent } from '@app/layouts/login-layout/login-layout.component';
+import { ContentLayoutComponent } from '@app/layouts/content-layout/content-layout.component';
+
+const ContentRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
+    loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'heroes',
+    loadChildren: './modules/heroes/heroes.module#HeroesModule'
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: './modules/hero-detail/hero-detail.module#HeroDetailModule'
+  }
+];
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'heroes', component: HeroesComponent }
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    component: ContentLayoutComponent,
+    // canActivate: [NoAuthGuard],
+    children: ContentRoutes
+  },
+  {
+    path: 'login',
+    component: LoginLayoutComponent,
+    loadChildren: './modules/login/login.module#LoginModule'
+  },
+  // Fallback when no prior routes is matched
+  {
+    path: '**',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
