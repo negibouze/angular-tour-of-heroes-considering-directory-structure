@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.styl']
+  selector: 'app-menu-list',
+  templateUrl: './menu-list.component.html',
+  styleUrls: ['./menu-list.component.styl']
 })
-export class SidebarComponent implements OnInit {
+export class MenuListComponent implements OnInit {
 
   navItems = [
     { link: '/dashboard', title: 'Dashboard' },

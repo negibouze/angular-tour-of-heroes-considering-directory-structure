@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,7 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { MessagesComponent } from './components/messages/messages.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MenuListComponent } from './components/menu-list/menu-list.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,12 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HeaderComponent,
     HeroSearchComponent,
     MessagesComponent,
-    SidebarComponent,
+    MenuListComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
@@ -34,7 +36,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HeaderComponent,
     HeroSearchComponent,
     MessagesComponent,
-    SidebarComponent,
+    MenuListComponent,
   ]
 })
 export class SharedModule { }

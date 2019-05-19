@@ -1,0 +1,3 @@
+<button class="nav-button" *ngFor="let item of navItems" [routerLink]="[item.link]" routerLinkActive="active">
+  {{ item.title }}
+</button>
