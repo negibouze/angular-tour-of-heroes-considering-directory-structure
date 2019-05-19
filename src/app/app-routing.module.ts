@@ -17,10 +17,6 @@ const ContentRoutes: Routes = [
   {
     path: 'heroes',
     loadChildren: './modules/heroes/heroes.module#HeroesModule'
-  },
-  {
-    path: 'detail/:id',
-    loadChildren: './modules/hero-detail/hero-detail.module#HeroDetailModule'
   }
 ];
 
