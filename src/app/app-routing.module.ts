@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginLayoutComponent } from '@app/layouts/login-layout/login-layout.component';
 import { ContentLayoutComponent } from '@app/layouts/content-layout/content-layout.component';
+import { PageNotFoundComponent } from './contents/page-not-found/page-not-found.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const ContentRoutes: Routes = [
   {
@@ -12,11 +14,11 @@ const ContentRoutes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
+    loadChildren: './contents/dashboard/dashboard.module#DashboardModule'
   },
   {
     path: 'heroes',
-    loadChildren: './modules/heroes/heroes.module#HeroesModule'
+    loadChildren: './contents/heroes/heroes.module#HeroesModule'
   }
 ];
 
@@ -29,20 +31,16 @@ const routes: Routes = [
   {
     path: '',
     component: ContentLayoutComponent,
-    // canActivate: [NoAuthGuard],
+    canActivate: [AuthGuard],
     children: ContentRoutes
   },
   {
     path: 'login',
     component: LoginLayoutComponent,
-    loadChildren: './modules/login/login.module#LoginModule'
+    loadChildren: './contents/login/login.module#LoginModule'
   },
   // Fallback when no prior routes is matched
-  {
-    path: '**',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

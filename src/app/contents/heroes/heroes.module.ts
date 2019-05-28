@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@app/shared';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
-import { HeroesComponent } from './pages/heroes/heroes.component';
-import { EditComponent } from './pages/edit/edit.component';
-import { DetailComponent } from './pages/detail/detail.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { EditComponent } from './edit/edit.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
