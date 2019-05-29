@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginLayoutComponent } from '@app/layouts/login-layout/login-layout.component';
+import { AuthLayoutComponent } from '@app/layouts/auth-layout/auth-layout.component';
 import { ContentLayoutComponent } from '@app/layouts/content-layout/content-layout.component';
 import { PageNotFoundComponent } from './contents/page-not-found/page-not-found.component';
 import { AuthGuard } from './core/guards/auth.guard';
@@ -25,7 +25,7 @@ const ContentRoutes: Routes = [
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/auth',
     pathMatch: 'full'
   },
   {
@@ -35,9 +35,9 @@ const routes: Routes = [
     children: ContentRoutes
   },
   {
-    path: 'login',
-    component: LoginLayoutComponent,
-    loadChildren: './contents/login/login.module#LoginModule'
+    path: 'auth',
+    component: AuthLayoutComponent,
+    loadChildren: './contents/auth/auth.module#AuthModule'
   },
   // Fallback when no prior routes is matched
   { path: '**', component: PageNotFoundComponent }

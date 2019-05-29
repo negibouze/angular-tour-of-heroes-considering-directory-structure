@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from '@app/shared';
 
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
-import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { PageNotFoundComponent } from './contents/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthLayoutComponent,
     ContentLayoutComponent,
-    LoginLayoutComponent,
     PageNotFoundComponent,
   ],
   imports: [
