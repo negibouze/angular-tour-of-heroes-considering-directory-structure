@@ -14,11 +14,11 @@ const ContentRoutes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: './contents/dashboard/dashboard.module#DashboardModule'
+    loadChildren: () => import('./contents/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: 'heroes',
-    loadChildren: './contents/heroes/heroes.module#HeroesModule'
+    loadChildren: () => import('./contents/heroes/heroes.module').then(m => m.HeroesModule)
   }
 ];
 
@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: 'auth',
     component: AuthLayoutComponent,
-    loadChildren: './contents/auth/auth.module#AuthModule'
+    loadChildren: () => import('./contents/auth/auth.module').then(m => m.AuthModule)
   },
   // Fallback when no prior routes is matched
   { path: '**', component: PageNotFoundComponent }
